@@ -20,7 +20,7 @@ The first function, makeVector creates a special "vector", which is really a lis
 
 
 
-*makeVector <- function(x = numeric()) {
+*{makeVector <- function(x = numeric()) {
         m <- NULL
         set <- function(y) {
                 x <<- y
@@ -32,7 +32,7 @@ The first function, makeVector creates a special "vector", which is really a lis
         list(set = set, get = get,
              setmean = setmean,
              getmean = getmean)
-}
+}}
 *
 
 
@@ -40,7 +40,7 @@ The following function calculates the mean of the special "vector" created with 
 
 
 
-*cachemean <- function(x, ...) {
+*{cachemean <- function(x, ...) {
         m <- x$getmean()
         if(!is.null(m)) {
                 message("getting cached data")
@@ -50,7 +50,7 @@ The following function calculates the mean of the special "vector" created with 
         m <- mean(data, ...)
         x$setmean(m)
         m
-}
+}}
 *
 
 
